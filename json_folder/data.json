@@ -1,0 +1,10 @@
+{
+  "name": "Umair Ahmad",
+  "age": 25,
+  "city": "Lahore",
+  "skills": [
+    "Python",
+    "JavaScript",
+    "C++"
+  ]
+}
