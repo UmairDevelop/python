@@ -17,3 +17,5 @@ print(od.shape) # Output: (4,)
 
 print(thd.size)  # Total number of elements = 4*3*2 = 24
 print(td.size == math.prod(td.shape))
+
+print(od.dtype) # Output: int64 (or int32 depending on the system)
