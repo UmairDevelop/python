@@ -24,3 +24,7 @@ y = np.array([[5,6]]) # To concatenate, dimensions must match except along the c
 z = np.concatenate([x,y], axis=0) # Concatenate along rows
 z = np.concatenate([x,y.T], axis=1) # Concatenate along columns
 print(z)
+
+narr = np.array([1,2,3,4,5,6,7,8])
+z = np.reshape(narr, (2,4), "C")
+print(z)
