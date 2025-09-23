@@ -8,7 +8,7 @@ print(b)
 
 # arr = np.arange(10,50,3,dtype=int).reshape(2,7)
 arr = np.random.randint(10,50,(3,3))
-np.savetxt('saved_sample_csv.csv', arr, delimiter=' ') # Saves as CSV file
+np.savetxt('saved_sample_csv.csv', arr, delimiter=',') # Saves as CSV file
 b = np.loadtxt('saved_sample_csv.csv', dtype=float) 
 b = b.astype(int)
 print(b)
