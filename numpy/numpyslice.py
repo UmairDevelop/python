@@ -22,3 +22,6 @@ for i in list_of_indexes:
 print(arr[barr]) # Prints elements less than 5 using the indexes in barr
 
 print(np.nonzero(arr == 42)) # If no element matches the condition, it returns an empty array
+
+arra = np.array([1,2,3,4,5,6])
+print(np.flip(arra)) # Reverses the array
