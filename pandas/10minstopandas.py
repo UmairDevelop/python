@@ -26,10 +26,55 @@ data = { # Dicitionary with different data types
     "F": "foo", # Object 
 }
 df2 = pd.DataFrame(data)
-print(df2)
-print(df2.dtypes) # Shows the data types of cloumns in dataframe
-print(df2.head(2)) # Gives the first 2 rows of dataframe
-print(df2.tail(1), "\n\n") # Gives one bottom end row
+# print(df2)
+# print(df2.dtypes) # Shows the data types of cloumns in dataframe
+# print(df2.head(2)) # Gives the first 2 rows of dataframe
+# print(df2.tail(1), "\n\n") # Gives one bottom end row
 
 array = df2.to_numpy() # Converts to numpy array
-print(array)
+# print(array.dtype) # Numpy array can store only one data type whereas dataframe can store one data type per column so on conversion the array gets the compatible datatype that can hold it
+# print(df2.describe()) # Gives a predefined summary of dataframe
+
+# print(df2.sort_index(axis=1, ascending=False)) # Column reverse
+# print(df2.sort_values(by="B"))
+
+#print(df["A"])
+#print(df[0:3])
+#print(df["20130102":"20130104"])
+
+#print(df.loc[date_range[1]]) # Select only one row from the dataframe
+#print(df.loc[:,["A","B"]]) # Select all rows :, but columns A and B
+#print(df.loc["20130103":"20130106", ["A","B"]]) # Select only in betweeen the give data 
+#print(df.loc[date_range[0],"A"]) # Selecting like this only gives a single value
+#print(df.at[date_range[0], "A"]) # Same like above but gives fast access and it only works on single values
+# print(df.iloc[3]) # Select by position or index
+# print(df.iloc[2:4,1:3]) # Slicing similar to numpy 
+# print(df.iloc[[1,2,4],[0,3]]) # Selects only the given indices/indexes
+# print(df.iloc[1:3, :])
+# print(df.iloc[:, 1:3])
+# print(df.iloc[1,1])
+# print(df.iat[1,2])
+
+# print(df[df["A"] > 0]) # Boolean Selection
+# print(df[df > 0])
+
+df3 = df.copy()
+df3["F"] = ["One", "Two", "Three", "Four", "Five", "Six"]
+# print(df3)
+# print(df3[df3["F"].isin(["Two", "Three"])]) # Selection using isin method by using the given keys
+
+# s1 = pd.Series([1,2,3,4,5,6], pd.date_range("20130102", periods=6))
+# df["F"] = s1
+# df.at[date_range[0], "A"] = 0 # Setting values by Label
+# df.iat[0,4] = 0 # Setting value using index or position
+# df.loc[:,["E"]] = np.array([5] * len(df)) 
+
+cdf = df.copy()
+cdf[cdf > 0] = -cdf # Applies negative to evry value greater than zero
+
+rdf = df.reindex(index=date_range[0:4], columns=list(df.columns) + ["F"])
+rdf.loc[date_range[0]:date_range[1], "F"] = 1
+# rdf.iloc[0:2, 6] = 1
+print(rdf.dropna(how="any")) # Drop the nan in the dataframe
+# rdf = rdf.fillna(value=5) # Replace the nan with the give value 
+print(pd.isna(rdf)) # Shows which vlue in a dataframe is nan in boolean values
