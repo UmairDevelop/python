@@ -78,3 +78,4 @@ rdf.loc[date_range[0]:date_range[1], "F"] = 1
 print(rdf.dropna(how="any")) # Drop the nan in the dataframe
 # rdf = rdf.fillna(value=5) # Replace the nan with the give value 
 print(pd.isna(rdf)) # Shows which vlue in a dataframe is nan in boolean values
+
