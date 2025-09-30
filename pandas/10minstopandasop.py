@@ -87,3 +87,5 @@ df.sort_values(by="grades") # Sort
 df.groupby("grades", observed=False).size() # Gives the count of values against each category
 df.to_csv("sample.csv")  
 df2 = pd.read_csv("imdb_train.csv")
+
+print(isinstance(df2, pd.DataFrame))
